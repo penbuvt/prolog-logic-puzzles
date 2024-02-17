@@ -25,9 +25,13 @@ hint0([
     member(apple, [FruitA, FruitB, FruitC]),
     member(banana, [FruitA, FruitB, FruitC]),
     member(grape, [FruitA, FruitB, FruitC]).
+% 1. Amy likes bananas.
 hint1(S) :- member(profile(amy, _, banana), S).
+% 2. Belle isn't 10.
 hint2(S) :- Age \== ten, member(profile(belle, Age, _), S).
+% 3. The 9 years old girl likes grapes.
 hint3(S) :- member(profile(_, nine, grape), S).
+% 4. Belle likes apples.
 hint4(S) :- member(profile(belle, _, apple), S).
 
 solution(S) :-
